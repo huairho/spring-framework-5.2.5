@@ -1,7 +1,5 @@
 package com.arno.spring.source.test.model;
 
-import lombok.Data;
-
 import java.io.Serializable;
 
 /**
@@ -11,8 +9,18 @@ import java.io.Serializable;
  */
 public class User implements Serializable {
 	private static final long serialVersionUID = -4361476551632963022L;
+	private Long id;
 	private String name;
 	private String address;
+	private City city;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getName() {
 		return name;
@@ -30,11 +38,21 @@ public class User implements Serializable {
 		this.address = address;
 	}
 
+	public City getCity() {
+		return city;
+	}
+
+	public void setCity(City city) {
+		this.city = city;
+	}
+
 	@Override
 	public String toString() {
 		return "User{" +
-				"name='" + name + '\'' +
+				"id=" + id +
+				", name='" + name + '\'' +
 				", address='" + address + '\'' +
+				", city=" + city +
 				'}';
 	}
 }

@@ -3,8 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="user" class="com.arno.spring.source.test.model.User">
+	<bean id="xmlUser" name="xmlUser" class="com.arno.spring.source.test.model.User">
 		<property name="name" value="arno"/>
 		<property name="address" value="hangzhou"/>
 	</bean>
+
+	<bean id="superUser" class="com.arno.spring.source.test.model.SuperUser" parent="xmlUser" primary="true"/>
+
+	<bean id="xmlUserHolder" class="com.arno.spring.source.test.model.UserHolder"/>
 </beans>
